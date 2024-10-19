@@ -17,14 +17,14 @@ object sparkMongo {
         .option("database", "test12")
         .option("collection", "dictionary")
         .save()
+      dataFrameFromFile.show()
       println("Data successfully written to MongoDB.")
     } catch {
       case e: Exception =>
         println(s"Error reading from MongoDB: ${e.getMessage}")
         sys.exit(1)
-    } finally {
-      spark.stop()
     }
+    spark.stop()
 
 
   }
