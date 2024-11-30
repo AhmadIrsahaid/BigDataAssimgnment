@@ -1,0 +1,51 @@
+John works at IBM.
+He lives in New York.
+Mary joined Google last year.
+Amazon is based in Seattle.
+The Eiffel Tower is in Paris.
+Sarah moved to London in 2019.
+Microsoft develops software products.
+Apple is famous for its iPhones.
+Tesla manufactures electric cars.
+SpaceX is exploring Mars missions.
+Facebook was rebranded as Meta.
+Google's headquarters is in California.
+IBM specializes in enterprise solutions.
+Netflix streams movies and shows.
+Spotify provides music streaming services.
+Adobe develops creative software tools.
+Intel makes computer processors.
+NVIDIA designs GPUs for gaming and AI.
+Coca-Cola is a popular soft drink brand.
+PepsiCo competes with Coca-Cola globally.
+Samsung produces electronic gadgets.
+Sony creates entertainment products.
+Amazon Web Services leads in cloud computing.
+Ford manufactures reliable cars.
+Toyota focuses on hybrid vehicles.
+Volkswagen is a leading German carmaker.
+Hyundai produces affordable vehicles.
+Nike designs sports apparel and shoes.
+Adidas competes with Nike globally.
+Puma sponsors sports teams worldwide.
+The White House is located in Washington.
+Harvard University is in Cambridge, Massachusetts.
+MIT is a leading technology institute.
+Stanford is famous for innovation and research.
+Yale University is part of the Ivy League.
+Oxford University is in the United Kingdom.
+Cambridge University is a global academic leader.
+Paris is known for its culture and art.
+Tokyo is a bustling metropolis in Japan.
+Beijing is the capital of China.
+Mumbai is a financial hub in India.
+Dubai is a popular tourist destination.
+Sydney is famous for its Opera House.
+Rio de Janeiro is known for its Carnival.
+Cape Town offers scenic landscapes in South Africa.
+Cairo is home to the Great Pyramid of Giza.
+Rome is rich in ancient history.
+Berlin is a cultural hub in Germany.
+Moscow is the capital of Russia.
+Toronto is a vibrant Canadian city.
+Vancouver is known for its natural beauty.
