@@ -28,7 +28,7 @@ object Main {
       .setOutputCol("word_embeddings")
 
     val posTagger = PerceptronModel.pretrained()
-      .setInputCols(Array("document", "tokens","word_embeddings"))
+      .setInputCols(Array("document", "tokens"))
       .setOutputCol("pos")
 
     val nerTagger = NerCrfModel.pretrained()
@@ -49,7 +49,7 @@ object Main {
 
 
     val flattened = result.select(
-      expr("explode(arrays(tokens.result, pos.result, ner.result)) as Tokens")
+      expr("explode(arrays_zip(tokens.result, pos.result, ner.result)) as Tokens")
     ).select(
       col("Tokens.0").as("token"),
       col("Tokens.1").as("pos"),
@@ -62,5 +62,7 @@ object Main {
       .count()
       .orderBy(desc("count"))
       .show(false)
+
+    
   }
 }
