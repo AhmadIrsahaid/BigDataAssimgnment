@@ -1,9 +1,7 @@
+import com.johnsnowlabs.nlp.annotator._
+import com.johnsnowlabs.nlp.base._
+import com.johnsnowlabs.nlp.embeddings._
 import com.johnsnowlabs.nlp.SparkNLP
-import com.johnsnowlabs.nlp.annotators.Tokenizer
-import com.johnsnowlabs.nlp.annotators.ner.crf.NerCrfModel
-import com.johnsnowlabs.nlp.annotators.pos.perceptron.PerceptronModel
-import com.johnsnowlabs.nlp.base.DocumentAssembler
-import com.johnsnowlabs.nlp.embeddings.WordEmbeddingsModel
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.sql.functions._
 
@@ -12,7 +10,7 @@ object Main {
 
     val spark = SparkNLP.start()
 
-    val df = spark.read.text("sparkNLP.txt").toDF("text")
+    val df = spark.read.orc("data2.crc").toDF()
 
     val documentAssembler = new DocumentAssembler()
       .setInputCol("text")
@@ -48,21 +46,18 @@ object Main {
     analysis.show(truncate = false)
 
 
-    val flattened = result.select(
-      expr("explode(arrays_zip(tokens.result, pos.result, ner.result)) as Tokens")
-    ).select(
-      col("Tokens.0").as("token"),
-      col("Tokens.1").as("pos"),
-      col("Tokens.2").as("ner")
-    )
+//    val flattened = result.select(
+//      expr("explode(arrays_zip(tokens.result, pos.result, ner.result)) as Tokens")
+//    ).select(
+//      col("Tokens.0").as("token"),
+//      col("Tokens.1").as("pos"),
+//      col("Tokens.2").as("ner")
+//    )
+//
+//    flattened.show(false)
 
-    flattened.show(false)
+//    flattened.groupBy("pos", "ner").count().orderBy(desc(count)).show(truncate = false)
 
-    flattened.groupBy("pos", "ner")
-      .count()
-      .orderBy(desc("count"))
-      .show(false)
 
-    
   }
 }
