@@ -46,17 +46,17 @@ object Main {
     analysis.show(truncate = false)
 
 
-//    val flattened = result.select(
-//      expr("explode(arrays_zip(tokens.result, pos.result, ner.result)) as Tokens")
-//    ).select(
-//      col("Tokens.0").as("token"),
-//      col("Tokens.1").as("pos"),
-//      col("Tokens.2").as("ner")
-//    )
-//
-//    flattened.show(false)
+    val flattened = result.select(
+      expr("explode(arrays_zip(tokens.result, pos.result, ner.result)) as Tokens")
+    ).select(
+      col("Tokens.0").as("token"),
+      col("Tokens.1").as("pos"),
+      col("Tokens.2").as("ner")
+    )
 
-//    flattened.groupBy("pos", "ner").count().orderBy(desc(count)).show(truncate = false)
+    flattened.show(false)
+
+    flattened.groupBy("pos", "ner").count().orderBy(desc(count)).show(truncate = false)
 
 
   }
